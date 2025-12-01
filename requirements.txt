@@ -1,7 +1,7 @@
 # Framework principal et bibliothèques de l'application
-Django==5.2.7             # Version utilisée pour créer le projet 
+Django==5.0.10             # Version utilisée pour créer le projet 
 djangorestframework       # Pour construire les API REST (si utilisé)
-django-filters            # Pour les fonctionnalités de filtrage (si utilisé)
+django-filter           # Pour les fonctionnalités de filtrage (si utilisé)
 
 # Outils de production et de base de données
 gunicorn                  # Serveur WSGI pour l'environnement de production.
