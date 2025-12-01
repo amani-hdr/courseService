@@ -1,0 +1,11 @@
+# Framework principal et bibliothèques de l'application
+[cite_start]Django==5.2.7             # Version utilisée pour créer le projet [cite: 26]
+djangorestframework       # Pour construire les API REST (si utilisé)
+django-filters            # Pour les fonctionnalités de filtrage (si utilisé)
+
+# Outils de production et de base de données
+gunicorn                  # Serveur WSGI pour l'environnement de production.
+psycopg2-binary           # Driver PostgreSQL nécessaire pour la connexion à la BD Render.
+whitenoise                # Pour servir les fichiers statiques de manière efficace en production.
+python-decouple           # (Optionnel) Recommandé pour lire la SECRET_KEY et DATABASE_URL depuis l'environnement.
+dj-database-url           # (Optionnel) Recommandé pour parser l'URL de connexion PostgreSQL de Render.
