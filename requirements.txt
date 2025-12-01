@@ -1,5 +1,5 @@
 # Framework principal et bibliothèques de l'application
-[cite_start]Django==5.2.7             # Version utilisée pour créer le projet [cite: 26]
+Django==5.2.7             # Version utilisée pour créer le projet 
 djangorestframework       # Pour construire les API REST (si utilisé)
 django-filters            # Pour les fonctionnalités de filtrage (si utilisé)
 
