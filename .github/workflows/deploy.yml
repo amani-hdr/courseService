@@ -2,8 +2,10 @@ name: Python Django CI/CD vers Render
 
 on:
   push:
+    # Déclenchement automatique pour les push sur les branches de déploiement
     branches: [ master, main ] 
   pull_request:
+    # Déclenchement pour les Pull Requests (pour la CI)
     branches: [ master, main ]
 
 jobs:
@@ -21,16 +23,16 @@ jobs:
         with:
           python-version: '3.11'
           
-      # --- NOUVELLE ÉTAPE DE DÉBOGAGE ---
+      # Étape 3 : Débogage - Lister les fichiers à la racine pour confirmer le chemin
       - name: Debug: List Files at Root
         run: ls -lR
         
-      # Étape 4 : Installer les dépendances (modifié)
+      # Étape 4 : Installer les dépendances 
       - name: Install dependencies
         run: |
           echo "Installation des dépendances..."
           python -m pip install --upgrade pip
-          # Installation des dépendances à partir de la racine
+          # Le chemin est maintenant confirmé comme étant la racine
           pip install -r requirements.txt
         
       # Étape 5 : Exécuter les tests unitaires (CI)
@@ -42,4 +44,5 @@ jobs:
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
           service-id: ${{ secrets.SERVICE_ID }}
+          # Utilisez RENDER_API_KEY comme secret pour le token Render
           api-key: ${{ secrets.COURSE_SERVICE_KEY }}
