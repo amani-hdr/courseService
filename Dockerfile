@@ -5,5 +5,7 @@ WORKDIR /app
 COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app/
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
 ENV DJANGO_SETTINGS_MODULE=mini_projet_idl.settings
-CMD gunicorn --bind 0.0.0.0:$PORT mini_projet_idl.wsgi:application
+ENTRYPOINT ["entrypoint.sh"]
