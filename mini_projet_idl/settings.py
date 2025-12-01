@@ -11,7 +11,7 @@ SECRET_KEY = 'django-insecure-&zl*i&kolh=7v!u@nh9acn*bjo3_nly$)!xaym^3&8169ea&7!
 
 # --- CORRECTION 1 : DEBUG DOIT ÊTRE FALSE EN PRODUCTION ---
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # --- CORRECTION 2 : AUTORISER L'HÔTE RENDER ---
 # Lit le nom d'hôte externe que Render injecte dans l'environnement
